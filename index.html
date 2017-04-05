@@ -6,29 +6,30 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h2>Instructions</h2>
-    <p>Tower of Hanoi is a game which consists of three rods with 4 - 8 different sized discs. The goal of the game is to move all discs to the third rod. You cannot place a larger disk atop a smaller one.</p>
-    <div id="disk4" class="disk" draggable=true ondragstart="dragstart_handler(event)" ></div>
-    <div id="disk5" class="disk" draggable=true ondragstart="dragstart_handler(event)"></div>
-    <div id="disk6" class="disk" draggable=true ondragstart="dragstart_handler(event)" ></div>
-    <div id="disk7" class="disk" draggable=true ondragstart="dragstart_handler(event)" ></div>
-    <div id="disk8" class="disk" draggable=true ondragstart="dragstart_handler(event)" ></div>
-    
-    <div id="startingRod" class="wrapper" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
-      <div id="disk1" class="disk" draggable=true ondragstart="dragstart_handler(event)" ></div>
-      <div id="disk2" class="disk" draggable=true ondragstart="dragstart_handler(event)" ></div>
-      <div id="disk3" class="disk" draggable=true ondragstart="dragstart_handler(event)"></div>
-    </div>
+    <h1>Instructions</h1>
+    <p>Tower of Hanoi is a game which consists of three rods with 4 - 8 different sized discs.<br> The goal of the game is to move all discs to the third rod.<br> You cannot place a larger disc atop a smaller disc.</p>
+    <div id="disc1" class="disc" draggable=true ondragstart="dragstart_handler(event)" ></div>
+    <div id="disc2" class="disc" draggable=true ondragstart="dragstart_handler(event)" ></div>
+    <div id="disc3" class="disc" draggable=true ondragstart="dragstart_handler(event)"></div>
+    <div id="disc4" class="disc" draggable=true ondragstart="dragstart_handler(event)" ></div>
+    <div id="disc5" class="disc" draggable=true ondragstart="dragstart_handler(event)"></div>
+    <div id="disc6" class="disc" draggable=true ondragstart="dragstart_handler(event)" ></div>
+    <div id="disc7" class="disc" draggable=true ondragstart="dragstart_handler(event)" ></div>
+    <div id="disc8" class="disc" draggable=true ondragstart="dragstart_handler(event)" ></div>
+  <div class="container">
+    <div id="startingRod" class="wrapper" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div>
     <div id="middleRod" class="wrapper" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div>
     <div id="endRod" class="wrapper" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div>
-    <select id="diskAmount" onchange="onchange_handler(this)">
-      <option value="3">3 Disks</option>
-      <option value="4">4 Disks</option>
-      <option value="5">5 Disks</option>
-      <option value="6">6 Disks</option>
-      <option value="7">7 Disks</option>
-      <option value="8">8 Disks</option>
+  </div>
+    <select id="discAmount" class="discOptions" onchange="onchange_handler(this)">
+      <option value="3">3 Discs</option>
+      <option value="4">4 Discs</option>
+      <option value="5">5 Discs</option>
+      <option value="6">6 Discs</option>
+      <option value="7">7 Discs</option>
+      <option value="8">8 Discs</option>
     </select>
+    <button id="reset" class="discOptions">Reset</button>
     <div id="moves" class="moves">Moves: 0</div>
     <div id="minMoves" class="moves">Minimum Moves: 7</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
