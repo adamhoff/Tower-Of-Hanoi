@@ -17,8 +17,12 @@
 
 ##User stories:
 
-  *As a user, I should be able to drag and drop a disc on to another rod so that I can successfully pay the game.
+  *As a user, I should be able to drag and drop a disc on to another rod so that I can successfully pay the game
+
   *As a user, I should not be able to drag and drop a larger disc, on top of a smaller one because it is against the game's rules.
+
   *As a user, I should be able to select how many discs I want to play the game with so that I may challenge myself with more discs.
+
   *As a user, I should be able to reset the game in case I don't like my progress so far.
+  
   *As a user, I should be able to see the minimum number of moves it takes to solve the puzzle so that I know how much time it will take me to solve.
