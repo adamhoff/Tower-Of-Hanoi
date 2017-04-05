@@ -1,12 +1,17 @@
 var currentMoves = 0;
 
+//Function to make getting elements id faster and less obtrusive.
 function _(id) {
   return document.getElementById(id);
 }
+//On click handler for the reset button. When reset button is clicked,
+//it resets the user's current moves to 0.
 _("reset").onclick = function() {
   currentMoves = 0;
   _("moves").innerHTML = "Moves: " + currentMoves;
   onchange_handler();
+  //While loops that remove all the now appended discs from the middle and end
+  //rods.
   while (_("middleRod").hasChildNodes()) {
     _("middleRod").removeChild(_("middleRod").lastChild);
   }
@@ -15,31 +20,41 @@ _("reset").onclick = function() {
   }
 };
 
+//Function that is called when user starts a drag.
 function dragstart_handler(event) {
   event.dataTransfer.dropEffect = "move";
   event.dataTransfer.setData("text", event.target.getAttribute('id'));
 }
-
+//Function that is called when user drop event occurs
 function drop_handler(event){
   event.preventDefault();
   var elem_id = event.dataTransfer.getData("text");
   var target_id = event.target.getAttribute('id');
+  //Appends the current disc to the current rod if the rod has no
+  //child elements. Then adds 1 to he users current moves taken.
   if (event.target.lastElementChild == null) {
     event.target.appendChild(_(elem_id));
     currentMoves = currentMoves + 1;
     _("moves").innerHTML = "Moves: " + currentMoves;
   }
+  /*Appends the current disc to the current rod if the current disc's width is
+  smaller than the width of the last child element of the current rod.
+  Then adds 1 to he users current moves taken. If disc is larger, the drop
+  event does nothing and current moves stays the same.*/
   else if (_(elem_id).offsetWidth < _(target_id).lastElementChild.offsetWidth) {
     event.target.appendChild(_(elem_id));
     currentMoves = currentMoves + 1;
     _("moves").innerHTML = "Moves: " + currentMoves;
   }
 }
-
+//Function needed to let drop events occur.
 function dragover_handler(event) {
   event.preventDefault();
 }
-
+/*Function for when the user selects an option from the select element.
+The amount of discs is displayed by appending the required number of discs to
+the starting rod. Then the display properties of the required discs are changed
+from none to flex. And the discs not needed are displayed to none*/
 function onchange_handler(select) {
   switch (_("discAmount").value) {
     case '3':

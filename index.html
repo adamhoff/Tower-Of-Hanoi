@@ -8,6 +8,7 @@
   <body>
     <h1>Instructions</h1>
     <p>Tower of Hanoi is a game which consists of three rods with 4 - 8 different sized discs.<br> The goal of the game is to move all discs to the third rod.<br> You cannot place a larger disc atop a smaller disc.</p>
+    <!-- Divs for all of the discs with draggable handlers and properties. Discs start out outside of wrapper divs so their behavior doens't affect some functionalities -->
     <div id="disc1" class="disc" draggable=true ondragstart="dragstart_handler(event)" ></div>
     <div id="disc2" class="disc" draggable=true ondragstart="dragstart_handler(event)" ></div>
     <div id="disc3" class="disc" draggable=true ondragstart="dragstart_handler(event)"></div>
@@ -16,11 +17,14 @@
     <div id="disc6" class="disc" draggable=true ondragstart="dragstart_handler(event)" ></div>
     <div id="disc7" class="disc" draggable=true ondragstart="dragstart_handler(event)" ></div>
     <div id="disc8" class="disc" draggable=true ondragstart="dragstart_handler(event)" ></div>
+
+    <!-- Container div that holds the rods for which the discs append to -->
   <div class="container">
     <div id="startingRod" class="wrapper" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div>
     <div id="middleRod" class="wrapper" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div>
     <div id="endRod" class="wrapper" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div>
   </div>
+  <!-- Select element for selecting amount of discs the user wants to play with-->
     <select id="discAmount" class="discOptions" onchange="onchange_handler(this)">
       <option value="3">3 Discs</option>
       <option value="4">4 Discs</option>
@@ -29,9 +33,12 @@
       <option value="7">7 Discs</option>
       <option value="8">8 Discs</option>
     </select>
+    <!-- Button to let user reset moves and start over -->
     <button id="reset" class="discOptions">Reset</button>
+    <!-- Divs for current move and minimum amount of moves to solve the puzzle -->
     <div id="moves" class="moves">Moves: 0</div>
     <div id="minMoves" class="moves">Minimum Moves: 7</div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="script.js"></script>
   </body>
