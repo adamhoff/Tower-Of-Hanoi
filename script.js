@@ -172,3 +172,7 @@ function onchange_handler(select) {
   }
 }
 onchange_handler();
+//Win condition statment.
+if (_("startingRod").childElementCount == 0 && _("middleRod").childElementCount == 0) {
+  alert("Congratulations! You solved this Tower of Hanoi in " + currentMoves + "moves!");
+}
