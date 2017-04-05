@@ -3,8 +3,11 @@
 ##Technologies Used:
 
   *HTML
+
   *CSS
+
   *Javascript
+  
   *Drag and drop events
 
 ##Approaches Taken:
@@ -24,5 +27,5 @@
   *As a user, I should be able to select how many discs I want to play the game with so that I may challenge myself with more discs.
 
   *As a user, I should be able to reset the game in case I don't like my progress so far.
-  
+
   *As a user, I should be able to see the minimum number of moves it takes to solve the puzzle so that I know how much time it will take me to solve.
