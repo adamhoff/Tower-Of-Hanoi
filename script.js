@@ -1,93 +1,104 @@
-//Variable for canvas to create elements
-var canvas = $("#canvas");
+var currentMoves = 0;
 
-var green = canvas.drawRect({
-  name: 'greenBox',
-  layer: true,
-  index: 2,
-  draggable: true,
-  fillStyle: 'green',
-  strokeStyle: 'black',
-  x: 200, y:320,
-  width: 225, height: 30,
-  cornerRadius: 10,
-  position: 1
-});
-var red = canvas.drawRect({
-  name: 'redBox',
-  layer: true,
-  index: 2,
-  draggable: true,
-  fillStyle: 'red',
-  strokeStyle: 'black',
-  x: 200, y:290,
-  width: 200, height: 30,
-  cornerRadius: 10,
-  position: 2
-});
-var blue = canvas.drawRect({
-  name: 'blueBox',
-  layer: true,
-  index: 2,
-  draggable: true,
-  fillStyle: 'blue',
-  strokeStyle: 'black',
-  x: 200, y:260,
-  width: 175, height: 30,
-  cornerRadius: 10,
-  position: 3
-});
-var yellow = canvas.drawRect({
-  index: 2,
-  name: 'yellowBox',
-  type: 'rectangle',
-  layer: true,
-  draggable: true,
-  fillStyle: 'yellow',
-  strokeStyle: 'black',
-  x: 200, y:230,
-  width: 150, height: 30,
-  cornerRadius: 10,
-  position: 4
-});
-var rod = canvas.drawLine({
-  strokeStyle: 'brown',
-  index: 0,
-  layer: true,
-  strokeWidth: 20,
-  x1: 200, y1: 320,
-  x2: 200, y2: 50
-});
-var rod2 = canvas.drawLine({
-  strokeStyle: 'brown',
-  index: 0,
-  layer: true,
-  strokeWidth: 20,
-  x1: 500, y1: 320,
-  x2: 500, y2: 50
-});
-var rod3 = canvas.drawLine({
-  strokeStyle: 'brown',
-  index: 0,
-  layer: true,
-  strokeWidth: 20,
-  x1: 800, y1: 320,
-  x2: 800, y2: 50
-});
+function _(id) {
+  return document.getElementById(id);
+}
 
-var line = canvas.drawLine({
-  strokeStyle: 'black',
-  index: 0,
-  layer: true,
-  strokeWidth: 2,
-  x1: 350, y1: 400,
-  x2: 350, y2: 50
-});
-var line2 = canvas.drawLine({
-  strokeStyle: 'black',
-  index: 0,
-  layer: true,
-  strokeWidth: 2,
-  x1: 650, y1: 400,
-  x2: 650, y2: 50
-});
+function dragstart_handler(event) {
+  event.dataTransfer.dropEffect = "move";
+  event.dataTransfer.setData("text", event.target.getAttribute('id'));
+}
+
+function drop_handler(event){
+  event.preventDefault();
+  var elem_id = event.dataTransfer.getData("text");
+  var target_id = event.target.getAttribute('id');
+  if (event.target.lastElementChild == null) {
+    event.target.appendChild(_(elem_id));
+    currentMoves = currentMoves + 1;
+    _("moves").innerHTML = "Moves: " + currentMoves;
+  }
+  else if (_(elem_id).offsetWidth < _(target_id).lastElementChild.offsetWidth) {
+    event.target.appendChild(_(elem_id));
+    currentMoves = currentMoves + 1;
+    _("moves").innerHTML = "Moves: " + currentMoves;
+  }
+}
+
+function dragover_handler(event) {
+  event.preventDefault();
+}
+
+function onchange_handler(select) {
+  switch (_("diskAmount").value) {
+    case '3':
+    _("disk4").style.display = 'none';
+    _("disk5").style.display = 'none';
+    _("disk6").style.display = 'none';
+    _("disk7").style.display = 'none';
+    _("disk8").style.display = 'none';
+    _("minMoves").innerHTML = "Minimum Moves: 7"
+    break;
+    case '4':
+    _("startingRod").append(_("disk4"));
+    _("disk4").style.display = 'flex';
+    _("disk5").style.display = 'none';
+    _("disk6").style.display = 'none';
+    _("disk7").style.display = 'none';
+    _("disk8").style.display = 'none';
+    _("minMoves").innerHTML = "Minimum Moves: 15"
+    break;
+    case '5':
+    _("startingRod").append(_("disk4"));
+    _("startingRod").append(_("disk5"));
+    _("disk4").style.display = 'flex';
+    _("disk5").style.display = 'flex';
+    _("disk6").style.display = 'none';
+    _("disk7").style.display = 'none';
+    _("disk8").style.display = 'none';
+    _("minMoves").innerHTML = "Minimum Moves: 31"
+    break;
+    case '6':
+    _("startingRod").append(_("disk4"));
+    _("startingRod").append(_("disk5"));
+    _("startingRod").append(_("disk6"));
+    _("disk4").style.display = 'flex';
+    _("disk5").style.display = 'flex';
+    _("disk6").style.display = 'flex';
+    _("disk7").style.display = 'none';
+    _("disk8").style.display = 'none';
+    _("minMoves").innerHTML = "Minimum Moves: 63"
+    break;
+    case '7':
+    _("startingRod").append(_("disk4"));
+    _("startingRod").append(_("disk5"));
+    _("startingRod").append(_("disk6"));
+    _("startingRod").append(_("disk7"));
+    _("disk4").style.display = 'flex';
+    _("disk5").style.display = 'flex';
+    _("disk6").style.display = 'flex';
+    _("disk7").style.display = 'flex';
+    _("disk8").style.display = 'none';
+    _("minMoves").innerHTML = "Minimum Moves: 127"
+    break;
+    case '8':
+    _("startingRod").append(_("disk4"));
+    _("startingRod").append(_("disk5"));
+    _("startingRod").append(_("disk6"));
+    _("startingRod").append(_("disk7"));
+    _("startingRod").append(_("disk8"));
+    _("disk4").style.display = 'flex';
+    _("disk5").style.display = 'flex';
+    _("disk6").style.display = 'flex';
+    _("disk7").style.display = 'flex';
+    _("disk8").style.display = 'flex';
+    _("minMoves").innerHTML = "Minimum Moves: 255"
+    break;
+    default:
+    _("disk4").style.display = 'none';
+    _("disk5").style.display = 'none';
+    _("disk6").style.display = 'none';
+    _("disk7").style.display = 'none';
+    _("disk8").style.display = 'none';
+  }
+}

@@ -1,9 +1,65 @@
-#canvas{
-  border: 1px solid black;
-}
 h2{
   text-align: center;
 }
 p{
   text-align: center;
+}
+.moves{
+  font-size: 30px;
+}
+.disk{
+  height: 30px;
+  margin: .5px;
+  border: 2px ridge black;
+  border-radius: 10px;
+  display: flex;
+}
+#disk1{
+  width: 300px;
+  background-color: red;
+}
+#disk2{
+  width: 275px;
+  background-color: orange;
+}
+#disk3{
+  width: 250px;
+  background-color: yellow;
+}
+#disk4{
+  width: 225px;
+  background-color: green;
+  display: none;
+}
+#disk5{
+  width: 200px;
+  background-color: blue;
+  display: none;
+}
+#disk6{
+  width: 175px;
+  background-color: indigo;
+  display: none;
+}
+#disk7{
+  width: 150px;
+  background-color: violet;
+  display: none;
+}
+#disk8{
+  width: 125px;
+  background-color: lightpink;
+  display: none;
+}
+.wrapper{
+  background-image: url("http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=7661878");
+  background-size: 30px 450px;
+  background-repeat: repeat-y;
+  background-position: center;
+  display: inline-flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  height: 370px;
+  width: 370px;
+  border: 2px solid black;
 }

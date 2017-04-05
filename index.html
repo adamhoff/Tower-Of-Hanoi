@@ -8,9 +8,30 @@
   <body>
     <h2>Instructions</h2>
     <p>Tower of Hanoi is a game which consists of three rods with 4 - 8 different sized discs. The goal of the game is to move all discs to the third rod. You cannot place a larger disk atop a smaller one.</p>
-    <canvas id="canvas" width="1000" height="400"></canvas>
+    <div id="disk4" class="disk" draggable=true ondragstart="dragstart_handler(event)" ></div>
+    <div id="disk5" class="disk" draggable=true ondragstart="dragstart_handler(event)"></div>
+    <div id="disk6" class="disk" draggable=true ondragstart="dragstart_handler(event)" ></div>
+    <div id="disk7" class="disk" draggable=true ondragstart="dragstart_handler(event)" ></div>
+    <div id="disk8" class="disk" draggable=true ondragstart="dragstart_handler(event)" ></div>
+    
+    <div id="startingRod" class="wrapper" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+      <div id="disk1" class="disk" draggable=true ondragstart="dragstart_handler(event)" ></div>
+      <div id="disk2" class="disk" draggable=true ondragstart="dragstart_handler(event)" ></div>
+      <div id="disk3" class="disk" draggable=true ondragstart="dragstart_handler(event)"></div>
+    </div>
+    <div id="middleRod" class="wrapper" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div>
+    <div id="endRod" class="wrapper" ondrop="drop_handler(event);" ondragover="dragover_handler(event);"></div>
+    <select id="diskAmount" onchange="onchange_handler(this)">
+      <option value="3">3 Disks</option>
+      <option value="4">4 Disks</option>
+      <option value="5">5 Disks</option>
+      <option value="6">6 Disks</option>
+      <option value="7">7 Disks</option>
+      <option value="8">8 Disks</option>
+    </select>
+    <div id="moves" class="moves">Moves: 0</div>
+    <div id="minMoves" class="moves">Minimum Moves: 7</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="jcanvas.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
