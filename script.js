@@ -45,6 +45,7 @@ function drop_handler(event){
     event.target.appendChild(_(elem_id));
     currentMoves = currentMoves + 1;
     _("moves").innerHTML = "Moves: " + currentMoves;
+    win();
   }
 }
 //Function needed to let drop events occur.
@@ -173,6 +174,8 @@ function onchange_handler(select) {
 }
 onchange_handler();
 //Win condition statment.
-if (_("startingRod").childElementCount == 0 && _("middleRod").childElementCount == 0) {
-  alert("Congratulations! You solved this Tower of Hanoi in " + currentMoves + "moves!");
+function win() {
+  if (_("startingRod").childElementCount == 0 && _("middleRod").childElementCount == 0) {
+    alert("Congratulations! You solved this Tower of Hanoi in " + currentMoves + " moves!");
+  }
 }
