@@ -7,7 +7,7 @@
   *CSS
 
   *Javascript
-  
+
   *Drag and drop events
 
 ##Approaches Taken:
@@ -29,3 +29,8 @@
   *As a user, I should be able to reset the game in case I don't like my progress so far.
 
   *As a user, I should be able to see the minimum number of moves it takes to solve the puzzle so that I know how much time it will take me to solve.
+
+##Installation Instructions
+
+  *Clone or download this repo
+  *Open index.html file

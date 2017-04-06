@@ -38,9 +38,8 @@ function drop_handler(event){
     _("moves").innerHTML = "Moves: " + currentMoves;
   }
   /*Appends the current disc to the current rod if the current disc's width is
-  smaller than the width of the last child element of the current rod.
-  Then adds 1 to he users current moves taken. If disc is larger, the drop
-  event does nothing and current moves stays the same.*/
+  smaller than the width of the last child element of the current rod. If disc
+  is larger, the drop event does nothing and current moves stays the same.*/
   else if (_(elem_id).offsetWidth < _(target_id).lastElementChild.offsetWidth) {
     event.target.appendChild(_(elem_id));
     currentMoves = currentMoves + 1;
@@ -176,6 +175,6 @@ onchange_handler();
 //Win condition statment.
 function win() {
   if (_("startingRod").childElementCount == 0 && _("middleRod").childElementCount == 0) {
-    alert("Congratulations! You solved this Tower of Hanoi in " + currentMoves + " moves!");
-  }
+      alert("Congratulations! You solved this Tower of Hanoi in " + currentMoves + " moves!");
+    }
 }
