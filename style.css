@@ -1,90 +1,104 @@
-body{
-  background-image: url("http://visitnetworld.com/wp-content/uploads/2016/03/parallax-background.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 1424px 900px;
+body {
+    background-image: url("http://visitnetworld.com/wp-content/uploads/2016/03/parallax-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1424px 900px;
 }
-h1{
-  font-family: Papyrus, fantasy;
-  font-size: 47px;
-  text-decoration: underline;
-  text-align: center;
-  margin-bottom: 5px;
-}
-p{
-  margin-top: 4px;
-  font-family: Papyrus, fantasy;
-  font-size: 20px;
-  text-align: center;
-  font-weight: bolder;
-  margin-left: 320px;
-  margin-right: 320px;
-}
-.moves{
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-.discOptions{
-  font-size: 20px;
-}
-.disc{
-  height: 30px;
-  margin-top: 5px;
-  border-top: 2px solid black;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
-  border-radius: 10px;
-  display: none;
-}
-#disc1{
-  width: 300px;
-  background-color: goldenrod;
-}
-#disc2{
-  width: 275px;
-  background-color: darkgoldenrod;
-}
-#disc3{
-  width: 250px;
-  background-color: peru;
-}
-#disc4{
-  width: 225px;
-  background-color: chocolate;
-}
-#disc5{
-  width: 200px;
-  background-color: saddlebrown;
-}
-#disc6{
-  width: 175px;
-  background-color: sienna;
-}
-#disc7{
-  width: 150px;
-  background-color: brown;
-}
-#disc8{
-  width: 125px;
-  background-color: maroon;
-}
-.wrapper{
-  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/26/1c/da/261cda8980a2c021896da33dfb5ec3ce.jpg");
-  background-size: 30px 450px;
-  background-repeat: repeat-y;
-  background-position: center;
-  background-color: #ebebeb;
-  display: inline-flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  height: 450px;
-  width: 450px;
-}
-.container{
-  background-color: #ebebeb;
-  margin-bottom: 10px;
-  width: 1424px;
-  border-bottom: 20px solid #4d3427;
-  display: inline-flex;
 
+h1 {
+    font-family: Papyrus, fantasy;
+    font-size: 47px;
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+p {
+    margin-top: 4px;
+    font-family: Papyrus, fantasy;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bolder;
+    margin-left: 320px;
+    margin-right: 320px;
+}
+
+.moves {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.discOptions {
+    font-size: 20px;
+}
+
+.disc {
+    height: 30px;
+    margin-top: 5px;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-radius: 10px;
+    display: none;
+}
+
+#disc1 {
+    width: 300px;
+    background-color: goldenrod;
+}
+
+#disc2 {
+    width: 275px;
+    background-color: darkgoldenrod;
+}
+
+#disc3 {
+    width: 250px;
+    background-color: peru;
+}
+
+#disc4 {
+    width: 225px;
+    background-color: chocolate;
+}
+
+#disc5 {
+    width: 200px;
+    background-color: saddlebrown;
+}
+
+#disc6 {
+    width: 175px;
+    background-color: sienna;
+}
+
+#disc7 {
+    width: 150px;
+    background-color: brown;
+}
+
+#disc8 {
+    width: 125px;
+    background-color: maroon;
+}
+
+.wrapper {
+    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/26/1c/da/261cda8980a2c021896da33dfb5ec3ce.jpg");
+    background-size: 30px 450px;
+    background-repeat: repeat-y;
+    background-position: center;
+    background-color: #ebebeb;
+    display: inline-flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    height: 450px;
+    width: 450px;
+}
+
+.container {
+    background-color: #ebebeb;
+    margin-bottom: 10px;
+    width: 1424px;
+    border-bottom: 20px solid #4d3427;
+    display: inline-flex;
 }
