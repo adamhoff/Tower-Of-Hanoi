@@ -82,7 +82,7 @@ p {
     background-color: maroon;
 }
 
-.wrapper {
+.rods {
     background-image: url("https://s-media-cache-ak0.pinimg.com/originals/26/1c/da/261cda8980a2c021896da33dfb5ec3ce.jpg");
     background-size: 30px 450px;
     background-repeat: repeat-y;
@@ -96,7 +96,6 @@ p {
 }
 
 .container {
-    background-color: #ebebeb;
     margin-bottom: 10px;
     width: 1424px;
     border-bottom: 20px solid #4d3427;

@@ -4,20 +4,23 @@ var currentMoves = 0;
 function _(id) {
     return document.getElementById(id);
 }
+//While loops that remove all the now appended discs from the middle and end
+//rods.
+function reset() {
+  while (_("middleRod").hasChildNodes()) {
+      _("middleRod").removeChild(_("middleRod").lastChild);
+  }
+  while (_("endRod").hasChildNodes()) {
+      _("endRod").removeChild(_("endRod").lastChild);
+  }
+}
 //On click handler for the reset button. When reset button is clicked,
 //it resets the user's current moves to 0.
 _("reset").onclick = function() {
     currentMoves = 0;
     _("moves").innerHTML = "Moves: " + currentMoves;
     onchange_handler();
-    //While loops that remove all the now appended discs from the middle and end
-    //rods.
-    while (_("middleRod").hasChildNodes()) {
-        _("middleRod").removeChild(_("middleRod").lastChild);
-    }
-    while (_("endRod").hasChildNodes()) {
-        _("endRod").removeChild(_("endRod").lastChild);
-    }
+    reset();
 };
 
 //Function that is called when user starts a drag.
@@ -58,6 +61,7 @@ from none to flex. And the discs not needed are displayed to none*/
 function onchange_handler(select) {
     switch (_("discAmount").value) {
         case '3':
+            reset();
             _("startingRod").append(_("disc1"));
             _("startingRod").append(_("disc2"));
             _("startingRod").append(_("disc3"));
@@ -72,6 +76,7 @@ function onchange_handler(select) {
             _("minMoves").innerHTML = "Minimum Moves: 7"
             break;
         case '4':
+            reset();
             _("startingRod").append(_("disc1"));
             _("startingRod").append(_("disc2"));
             _("startingRod").append(_("disc3"));
@@ -87,6 +92,7 @@ function onchange_handler(select) {
             _("minMoves").innerHTML = "Minimum Moves: 15"
             break;
         case '5':
+            reset();
             _("startingRod").append(_("disc1"));
             _("startingRod").append(_("disc2"));
             _("startingRod").append(_("disc3"));
@@ -103,6 +109,7 @@ function onchange_handler(select) {
             _("minMoves").innerHTML = "Minimum Moves: 31"
             break;
         case '6':
+            reset();
             _("startingRod").append(_("disc1"));
             _("startingRod").append(_("disc2"));
             _("startingRod").append(_("disc3"));
@@ -120,6 +127,7 @@ function onchange_handler(select) {
             _("minMoves").innerHTML = "Minimum Moves: 63"
             break;
         case '7':
+            reset();
             _("startingRod").append(_("disc1"));
             _("startingRod").append(_("disc2"));
             _("startingRod").append(_("disc3"));
@@ -138,6 +146,7 @@ function onchange_handler(select) {
             _("minMoves").innerHTML = "Minimum Moves: 127"
             break;
         case '8':
+            reset();
             _("startingRod").append(_("disc1"));
             _("startingRod").append(_("disc2"));
             _("startingRod").append(_("disc3"));
@@ -157,6 +166,7 @@ function onchange_handler(select) {
             _("minMoves").innerHTML = "Minimum Moves: 255"
             break;
         default:
+            reset();
             _("startingRod").append(_("disc1"));
             _("startingRod").append(_("disc2"));
             _("startingRod").append(_("disc3"));
