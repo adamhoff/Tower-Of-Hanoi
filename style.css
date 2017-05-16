@@ -104,6 +104,6 @@ p {
   padding-left: 10px;
   background-color: burlywood;
   width: 23%;
-  border: 2px outset gold;
-  filter: drop-shadow(1px 3px 10px gold);
+  border: 2px outset #4d3427;
+  filter: drop-shadow(1px 3px 10px black);
 }
