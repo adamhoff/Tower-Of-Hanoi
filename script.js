@@ -4,8 +4,7 @@ var currentMoves = 0;
 function _(id) {
   return document.getElementById(id);
 }
-//While loops that remove all the now appended discs from the middle and end
-//rods.
+//Removes all rods from non-starting rod
 function reset() {
   while (_("middleRod").hasChildNodes()) {
     _("middleRod").removeChild(_("middleRod").lastChild);
@@ -14,8 +13,7 @@ function reset() {
     _("endRod").removeChild(_("endRod").lastChild);
   }
 }
-//On click handler for the reset button. When reset button is clicked,
-//it resets the user's current moves to 0.
+//On click handler for the reset button. Resets the user's current moves to 0.
 _("reset").onclick = function() {
   currentMoves = 0;
   _("moves").innerHTML = "Moves: " + currentMoves;
@@ -28,20 +26,17 @@ function dragstart_handler(event) {
   event.dataTransfer.dropEffect = "move";
   event.dataTransfer.setData("text", event.target.getAttribute('id'));
 }
-//Function that is called when user drop event occurs
+//Function that is called when user drop event occurs. This appends the active disc to rod if child has 0 elements or if width is smaller than last child element of rod
 function drop_handler(event) {
   event.preventDefault();
   var elem_id = event.dataTransfer.getData("text");
   var target_id = event.target.getAttribute('id');
-  //Appends the current disc to the current rod if the rod has no
-  //child elements. Then adds 1 to he users current moves taken.
+
   if (event.target.lastElementChild == null) {
     event.target.appendChild(_(elem_id));
     currentMoves = currentMoves + 1;
     _("moves").innerHTML = "Moves: " + currentMoves;
   }
-  /*Appends the current disc to the current rod if the current disc's width is
-  smaller than the width of the last child element of the current rod. */
   else if (_(elem_id).offsetWidth < _(target_id).lastElementChild.offsetWidth) {
     event.target.appendChild(_(elem_id));
     currentMoves = currentMoves + 1;
@@ -53,9 +48,7 @@ function drop_handler(event) {
 function dragover_handler(event) {
   event.preventDefault();
 }
-/*Function for when the user selects an option from the select element.
-The amount of discs is displayed by appending the required number of discs to
-the starting rod.*/
+//Switch statement that appends number of selected disks to the starting rod.
 function onchange_handler(select) {
   switch (_("discAmount").value) {
     case '3':
@@ -173,6 +166,7 @@ function onchange_handler(select) {
   }
 }
 onchange_handler();
+
 //Win condition statment.
 function win() {
   if (_("startingRod").childElementCount == 0 && _("middleRod").childElementCount == 0) {
