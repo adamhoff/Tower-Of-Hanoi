@@ -8,20 +8,20 @@
 </head>
 
 <body>
-  <div id="landing_page">
-    <h1 id="title">Tower Of Hanoi</h1>
-    <hr>
-    <div class="instructions">
-      <h2>Instructions</h2>
-      <p>Tower of Hanoi is a game which consists of three rods with 4 - 8 different sized discs.</p>
-      <p>The goal of the game is to move all discs to the third rod.</p>
-      <p>However, You cannot place a larger disc atop a smaller disc.</p>
-    </div>
-    <div class="footer">
-      <a id="arrow" href="#game_page">&dArr;</a>
-    </div>
-</div>
-<div id="game_page">
+
+    <h1 id="title">Tower Of Hanoi
+      <hr>
+        <p>A mathimatical puzzle game</p>
+    </h1>
+    <p>The goal of the game is to move all discs to the third rod.</p>
+
+
+      <div class="instructions">
+        <p>1. Only one disc may be moved at a time.</p>
+        <p>2. Only the top disc of a stack can be moved.</p>
+        <p>3. You cannot place a larger disc atop a smaller disc.</p>
+      </div>
+
   <!-- Divs for all of the discs with draggable handlers and properties. Discs start out outside of wrapper divs so their behavior doens't affect some functionalities -->
   <div id="disc1" class="disc" draggable=true ondragstart="dragstart_handler(event)"></div>
   <div id="disc2" class="disc" draggable=true ondragstart="dragstart_handler(event)"></div>
@@ -54,9 +54,9 @@
     <div id="moves" class="moves">Moves: 0</div>
     <div id="minMoves" class="moves">Minimum Moves: 7</div>
   </div>
-</div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
   <script src="script.js"></script>
 </body>
 

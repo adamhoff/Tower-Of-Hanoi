@@ -50,6 +50,7 @@ function dragover_handler(event) {
 }
 //Switch statement that appends number of selected disks to the starting rod.
 function onchange_handler(select) {
+  _("moves").innerHTML = "Moves: " + 0;
   switch (_("discAmount").value) {
     case '3':
       _("startingRod").append(_("disc1"));

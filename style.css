@@ -1,63 +1,32 @@
 body {
-  background-color: #040405;
   font-family: 'Avalon', sans-serif;
-}
-#landing_page{
-  color: white;
-  text-shadow: 2px 2px 4px #000000;
-  height: 100vh;
-  background-image: url('images/hanoi-wallpaper.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-#landing_page h1{
-  text-align: center;
-}
-#landing_page hr{
-  margin-top: 0;
-  margin-bottom: 0;
-  width: 180px;
-}
-#landing_page .instructions{
-  margin-top: 180px;
-}
-#landing_page .instructions h2 {
-  font-family: 'Avalon', sans-serif;
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 5px;
-  font-weight: bold;
+  background-color: whitesmoke;
 }
 
-#landing_page .instructions p {
-  font-family: 'Avalon', sans-serif;
-  font-size: 18px;
-  text-align: center;
-  font-weight: bold;
-}
-#title{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin: 15px 560px;
-}
-#landing_page a{
-  text-decoration: none;
+#title {
   position: absolute;
-  left: 50%;
-  bottom: 10%;
-  font-size: 30px;
-  color: white;
+  text-align: right;
+  top: 0;
+  right: 5%;
+  color: darkslategray;
+  font-size: 48px;
 }
 
-#game_page{
-  background-image: url('images/hanoi-wallpaper.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 100vh;
-  padding-top: 50px;
+#title hr {
+  margin: 0;
 }
+
+#title p {
+  font-size: 14px;
+}
+
+.instructions p{
+  line-height: 0.3em;
+  color: darkslategray;
+  font-weight: bold;
+  text-indent: 2em;
+}
+
 .moves {
   font-size: 30px;
   margin-bottom: 10px;
@@ -68,7 +37,7 @@ body {
 }
 
 .disc {
-  height: 50px;
+  height: 10%;
   margin-top: 5px;
   border-top: 2px solid black;
   border-left: 2px solid black;
@@ -76,49 +45,51 @@ body {
   border-radius: 10px;
   display: none;
   filter: drop-shadow(1px 3px 5px black);
-  transition: filter 1s;
+  transition: filter 0.3s;
 }
 .disc:hover{
   filter: drop-shadow(1px 3px 5px blue);
+  cursor: move;
 }
 #disc1 {
   width: 300px;
-  background-color: #2df900;
+  background-color: steelblue;
+  margin-bottom: 1%;
 }
 
 #disc2 {
   width: 275px;
-  background-color: #f2ffef;
+  background-color: peru;
 }
 
 #disc3 {
   width: 250px;
-  background-color: #2df900;
+  background-color: steelblue;
 }
 
 #disc4 {
   width: 225px;
-  background-color: #f2ffef;
+  background-color: peru;
 }
 
 #disc5 {
   width: 200px;
-  background-color: #2df900;
+  background-color: steelblue;
 }
 
 #disc6 {
   width: 175px;
-  background-color: #f2ffef;
+  background-color: peru;
 }
 
 #disc7 {
   width: 150px;
-  background-color: #2df900;
+  background-color: steelblue;
 }
 
 #disc8 {
   width: 125px;
-  background-color: #f2ffef;
+  background-color: peru;
 }
 
 .rods {
@@ -135,18 +106,37 @@ body {
 }
 
 .container {
+  margin-top: 5%;
   margin-bottom: 10px;
   width: 100%;
   border-bottom: 20px solid #4d3427;
   display: inline-flex;
 }
-.options{
+
+.options {
   padding-top: 10px;
   padding-left: 10px;
   margin-left: 10px;
-  color: white;
-  background-color: rgba(97, 134, 133, 0);
-  text-shadow: 2px 2px 4px #000000;
+  color: darkslategray;
+  text-shadow: 1px 1px 1px #111111;
   width: 23%;
-  border: 2px outset white;
+}
+
+#discAmount {
+  background-color: steelblue;
+  border: 1px solid black;
+}
+
+#discAmount:hover {
+  cursor: pointer;
+}
+
+#reset {
+  background-color: steelblue;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+#reset:hover{
+  cursor: pointer;
 }
