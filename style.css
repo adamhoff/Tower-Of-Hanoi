@@ -1,3 +1,4 @@
+
 body {
   font-family: 'Avalon', sans-serif;
   background-color: whitesmoke;
@@ -8,7 +9,7 @@ body {
   text-align: right;
   top: 0;
   right: 5%;
-  color: darkslategray;
+  color: #3e4444;
   font-size: 48px;
 }
 
@@ -22,7 +23,7 @@ body {
 
 .instructions p{
   line-height: 0.3em;
-  color: darkslategray;
+  color: #3e4444;
   font-weight: bold;
   text-indent: 2em;
 }
@@ -38,57 +39,56 @@ body {
 
 .disc {
   height: 10%;
-  margin-top: 5px;
-  border-top: 2px solid black;
-  border-left: 2px solid black;
+  margin-bottom: 5px;
+  border-bottom: 2px solid black;
   border-right: 2px solid black;
   border-radius: 10px;
   display: none;
-  filter: drop-shadow(1px 3px 5px black);
-  transition: filter 0.3s;
+  filter: drop-shadow(1px 1px 1px black);
+  transition: all 0.2s ease-out;
 }
 .disc:hover{
-  filter: drop-shadow(1px 3px 5px blue);
+  transform: scale(0.97, 0.97); box-shadow: none;
   cursor: move;
+  opacity: 0.83;
 }
 #disc1 {
-  width: 300px;
-  background-color: steelblue;
-  margin-bottom: 1%;
+  width: 425px;
+  background-color: #6b5b95;
 }
 
 #disc2 {
-  width: 275px;
-  background-color: peru;
+  width: 375px;
+  background-color: #E94B3C;
 }
 
 #disc3 {
-  width: 250px;
-  background-color: steelblue;
+  width: 325px;
+  background-color: #ECDB54;
 }
 
 #disc4 {
-  width: 225px;
-  background-color: peru;
+  width: 275px;
+  background-color: #6F9FD8;
 }
 
 #disc5 {
-  width: 200px;
-  background-color: steelblue;
+  width: 225px;
+  background-color: #944743;
 }
 
 #disc6 {
   width: 175px;
-  background-color: peru;
+  background-color: #00A591;
 }
 
 #disc7 {
-  width: 150px;
-  background-color: steelblue;
+  width: 125px;
+  background-color: #BFD641;
 }
 
 #disc8 {
-  width: 125px;
+  width: 75px;
   background-color: peru;
 }
 
@@ -117,13 +117,12 @@ body {
   padding-top: 10px;
   padding-left: 10px;
   margin-left: 10px;
-  color: darkslategray;
-  text-shadow: 1px 1px 1px #111111;
+  color: #3e4444;
+  font-weight: bold;
   width: 23%;
 }
 
 #discAmount {
-  background-color: steelblue;
   border: 1px solid black;
 }
 
@@ -132,7 +131,6 @@ body {
 }
 
 #reset {
-  background-color: steelblue;
   border: 1px solid black;
   border-radius: 15px;
 }

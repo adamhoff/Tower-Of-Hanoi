@@ -1,6 +1,6 @@
 var currentMoves = 0;
 
-//Function to make getting elements id faster and less obtrusive.
+//Function that make getting elements ID faster and less obtrusive.
 function _(id) {
   return document.getElementById(id);
 }
@@ -13,7 +13,8 @@ function reset() {
     _("endRod").removeChild(_("endRod").lastChild);
   }
 }
-//On click handler for the reset button. Resets the user's current moves to 0.
+
+//Resets the user's current moves to 0.
 _("reset").onclick = function() {
   currentMoves = 0;
   _("moves").innerHTML = "Moves: " + currentMoves;
@@ -21,18 +22,21 @@ _("reset").onclick = function() {
   reset();
 };
 
-//Function that is called when user starts a drag.
 function dragstart_handler(event) {
-  event.dataTransfer.dropEffect = "move";
-  event.dataTransfer.setData("text", event.target.getAttribute('id'));
+  var parentNode = _(event.target.getAttribute('id')).parentNode;
+  if (_(event.target.getAttribute('id')) ==  parentNode.lastElementChild) {
+    event.dataTransfer.dropEffect = "move";
+    event.dataTransfer.setData("text", event.target.getAttribute('id'));
+  }
 }
-//Function that is called when user drop event occurs. This appends the active disc to rod if child has 0 elements or if width is smaller than last child element of rod
+
+//Appends the active disc to rod if child has 0 elements or if the width is smaller than last child element of rod
 function drop_handler(event) {
   event.preventDefault();
   var elem_id = event.dataTransfer.getData("text");
   var target_id = event.target.getAttribute('id');
 
-  if (event.target.lastElementChild == null) {
+  if (event.target.lastElementChild == null ) {
     event.target.appendChild(_(elem_id));
     currentMoves = currentMoves + 1;
     _("moves").innerHTML = "Moves: " + currentMoves;
